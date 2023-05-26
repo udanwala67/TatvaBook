@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "a5f4ca73-f96a-4fc9-a2ed-b30516453992": {
+      "ProjectGuid": "a5f4ca73-f96a-4fc9-a2ed-b30516453992",
+      "DisplayName": "TatvaBook.Entities",
+      "ColorIndex": 0
+    },
+    "1007578f-b21a-4fb6-bb0d-16527a372d9b": {
+      "ProjectGuid": "1007578f-b21a-4fb6-bb0d-16527a372d9b",
+      "DisplayName": "TatvaBook.Repository",
+      "ColorIndex": 1
+    },
+    "b43c0343-6979-425b-8052-e7c9661df021": {
+      "ProjectGuid": "b43c0343-6979-425b-8052-e7c9661df021",
+      "DisplayName": "TatvaBook",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 3
+}

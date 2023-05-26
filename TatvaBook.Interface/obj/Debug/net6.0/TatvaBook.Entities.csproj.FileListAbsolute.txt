@@ -1,0 +1,13 @@
+C:\TatvaBook\TatvaBook.Interface\bin\Debug\net6.0\TatvaBook.Entities.deps.json
+C:\TatvaBook\TatvaBook.Interface\bin\Debug\net6.0\TatvaBook.Entities.runtimeconfig.json
+C:\TatvaBook\TatvaBook.Interface\bin\Debug\net6.0\TatvaBook.Entities.dll
+C:\TatvaBook\TatvaBook.Interface\bin\Debug\net6.0\ref\TatvaBook.Entities.dll
+C:\TatvaBook\TatvaBook.Interface\bin\Debug\net6.0\TatvaBook.Entities.pdb
+C:\TatvaBook\TatvaBook.Interface\obj\Debug\net6.0\TatvaBook.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\TatvaBook\TatvaBook.Interface\obj\Debug\net6.0\TatvaBook.Entities.AssemblyInfoInputs.cache
+C:\TatvaBook\TatvaBook.Interface\obj\Debug\net6.0\TatvaBook.Entities.AssemblyInfo.cs
+C:\TatvaBook\TatvaBook.Interface\obj\Debug\net6.0\TatvaBook.Entities.csproj.CoreCompileInputs.cache
+C:\TatvaBook\TatvaBook.Interface\obj\Debug\net6.0\TatvaBook.Entities.dll
+C:\TatvaBook\TatvaBook.Interface\obj\Debug\net6.0\ref\TatvaBook.Entities.dll
+C:\TatvaBook\TatvaBook.Interface\obj\Debug\net6.0\TatvaBook.Entities.pdb
+C:\TatvaBook\TatvaBook.Interface\obj\Debug\net6.0\TatvaBook.Entities.genruntimeconfig.cache

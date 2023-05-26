@@ -1,0 +1,17 @@
+C:\TatvaBook\TatvaBook.Repository\bin\Debug\net6.0\TatvaBook.Repository.deps.json
+C:\TatvaBook\TatvaBook.Repository\bin\Debug\net6.0\TatvaBook.Repository.runtimeconfig.json
+C:\TatvaBook\TatvaBook.Repository\bin\Debug\net6.0\TatvaBook.Repository.dll
+C:\TatvaBook\TatvaBook.Repository\bin\Debug\net6.0\ref\TatvaBook.Repository.dll
+C:\TatvaBook\TatvaBook.Repository\bin\Debug\net6.0\TatvaBook.Repository.pdb
+C:\TatvaBook\TatvaBook.Repository\bin\Debug\net6.0\TatvaBook.Entities.dll
+C:\TatvaBook\TatvaBook.Repository\bin\Debug\net6.0\TatvaBook.Entities.pdb
+C:\TatvaBook\TatvaBook.Repository\obj\Debug\net6.0\TatvaBook.Repository.csproj.AssemblyReference.cache
+C:\TatvaBook\TatvaBook.Repository\obj\Debug\net6.0\TatvaBook.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\TatvaBook\TatvaBook.Repository\obj\Debug\net6.0\TatvaBook.Repository.AssemblyInfoInputs.cache
+C:\TatvaBook\TatvaBook.Repository\obj\Debug\net6.0\TatvaBook.Repository.AssemblyInfo.cs
+C:\TatvaBook\TatvaBook.Repository\obj\Debug\net6.0\TatvaBook.Repository.csproj.CoreCompileInputs.cache
+C:\TatvaBook\TatvaBook.Repository\obj\Debug\net6.0\TatvaBook.Repository.csproj.CopyComplete
+C:\TatvaBook\TatvaBook.Repository\obj\Debug\net6.0\TatvaBook.Repository.dll
+C:\TatvaBook\TatvaBook.Repository\obj\Debug\net6.0\ref\TatvaBook.Repository.dll
+C:\TatvaBook\TatvaBook.Repository\obj\Debug\net6.0\TatvaBook.Repository.pdb
+C:\TatvaBook\TatvaBook.Repository\obj\Debug\net6.0\TatvaBook.Repository.genruntimeconfig.cache
