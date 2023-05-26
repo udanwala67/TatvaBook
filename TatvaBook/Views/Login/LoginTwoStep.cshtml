@@ -9,13 +9,19 @@
 }
 
 <h1>Login Two Step</h1>
-<div class="text-danger" asp-validation-summary="All"></div>
+<div class="text-danger" asp-validation-summary="All">
+    @if (TempData["success"] != null)
+    {
+        <span class="text-success">@TempData["success"]</span>
+    }
+
+</div>
 
 <p>Enter your authentication code</p>
 
 <form method="post">
     <div class="form-group">
-        <label for = "code" asp-for = "TwoFactorCode">Code</label>
+        <label for="code" asp-for="TwoFactorCode">Code</label>
         <input asp-for="TwoFactorCode" class="form-control" />
     </div>
     <button class=" mt-2 btn btn-primary" type="submit">Log In</button>

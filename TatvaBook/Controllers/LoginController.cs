@@ -93,7 +93,8 @@ namespace TatvaBook.Controllers
                     };
                     smtpClient.Send(message);
 
-                    return RedirectToAction("RegistrationConfirmation", "Login");
+                    TempData["Success"] = "Registration link has been sent successfully to your Registred Email.";
+                   /* return RedirectToAction("RegistrationConfirmation", "Login");*/
                 }
 
                 foreach (var error in result.Errors)
@@ -107,10 +108,10 @@ namespace TatvaBook.Controllers
         }
 
 
-        public async Task<IActionResult> RegistrationConfirmation()
+       /* public async Task<IActionResult> RegistrationConfirmation()
         {
             return View();
-        }
+        }*/
 
 
         public async Task<IActionResult> UserRegistred(string email, string token)
@@ -153,7 +154,7 @@ namespace TatvaBook.Controllers
                     var result = await _signInManager.PasswordSignInAsync(ExistingUser, user.Password, user.RememberMe, false);
 
                     if (result.Succeeded)
-                        return RedirectToAction("Index", "Home"); // here go for one view as you are auhenticated user
+                        return RedirectToAction("Index", "Home"); 
 
                     if (result.RequiresTwoFactor)
                     {
@@ -219,7 +220,7 @@ namespace TatvaBook.Controllers
 
 
                     _logger.Log(LogLevel.Warning, passwordResetLink);
-                    TempData["success"] = "Token Generated SuccessFully";
+                    /*TempData["success"] = "Token Generated SuccessFully";*/
 
                     var fromAddress = new MailAddress("buiesnessenquiry@gmail.com", "TatvaBook");
                     var toAddress = new MailAddress(model.Email);
@@ -241,7 +242,8 @@ namespace TatvaBook.Controllers
                     };
                     smtpClient.Send(message);
 
-                    return RedirectToAction("ResetPasswordLinkSent", "Home");
+                    TempData["success"] = "reset password link has been sent successfully";
+                    /*return RedirectToAction("ResetPasswordLinkSent", "Home");*/
 
 
                 }
@@ -286,8 +288,8 @@ namespace TatvaBook.Controllers
                     var result = await _userManager.ResetPasswordAsync(user, model.Token, model.Password);
                     if (result.Succeeded)
                     {
-                        TempData["success"] = "Password Changed Successfully.";
-                        return RedirectToAction("PasswordChanged", "Home");
+                        TempData["Success"] = "Password Changed Successfully,please click on login button";
+                       /* return RedirectToAction("PasswordChanged", "Home");*/
 
                     }
 
@@ -306,6 +308,7 @@ namespace TatvaBook.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> LoginTwoStep(string email)
         {
+            TempData["Success"] = "the confirmation code has been sent to your registred email successfully";
             var user = await _userManager.FindByEmailAsync(email);
 
             var token = await _userManager.GenerateTwoFactorTokenAsync(user, "Email");
@@ -340,8 +343,6 @@ namespace TatvaBook.Controllers
 
 
 
-
-
         [HttpPost]
         [AllowAnonymous]
         public async Task<IActionResult> LoginTwoStep(TwoFactorModel twoFactorModel)
@@ -354,7 +355,7 @@ namespace TatvaBook.Controllers
             var result = await _signInManager.TwoFactorSignInAsync("Email", twoFactorModel.TwoFactorCode, false, false);
             if (result.Succeeded)
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("PlatformLanding", "Home");
             }
             else
             {

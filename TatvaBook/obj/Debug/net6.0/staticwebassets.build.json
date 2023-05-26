@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "36I07WCxhbkjDOMZBUnElb6aQPkJjfk/MFhiMdYrMS4=",
+  "Hash": "tcVR1M+C39DNJj35GETu/x7lIWrs7weNvpNM0HJ+loQ=",
   "Source": "TatvaBook",
   "BasePath": "_content/TatvaBook",
   "Mode": "Default",
@@ -68,6 +68,23 @@
       "OriginalItemSpec": "wwwroot\\css\\Login.css"
     },
     {
+      "Identity": "C:\\TatvaBook\\TatvaBook\\wwwroot\\css\\Sidebar.css",
+      "SourceId": "TatvaBook",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\TatvaBook\\TatvaBook\\wwwroot\\",
+      "BasePath": "_content/TatvaBook",
+      "RelativePath": "css/Sidebar.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Sidebar.css"
+    },
+    {
       "Identity": "C:\\TatvaBook\\TatvaBook\\wwwroot\\css\\site.css",
       "SourceId": "TatvaBook",
       "SourceType": "Discovered",
@@ -100,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\TatvaBook\\TatvaBook\\wwwroot\\Images\\logo.png",
+      "SourceId": "TatvaBook",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\TatvaBook\\TatvaBook\\wwwroot\\",
+      "BasePath": "_content/TatvaBook",
+      "RelativePath": "Images/logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\logo.png"
     },
     {
       "Identity": "C:\\TatvaBook\\TatvaBook\\wwwroot\\js\\site.js",

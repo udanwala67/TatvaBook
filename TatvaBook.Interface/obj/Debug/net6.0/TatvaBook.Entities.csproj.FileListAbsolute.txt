@@ -3,6 +3,7 @@ C:\TatvaBook\TatvaBook.Interface\bin\Debug\net6.0\TatvaBook.Entities.runtimeconf
 C:\TatvaBook\TatvaBook.Interface\bin\Debug\net6.0\TatvaBook.Entities.dll
 C:\TatvaBook\TatvaBook.Interface\bin\Debug\net6.0\ref\TatvaBook.Entities.dll
 C:\TatvaBook\TatvaBook.Interface\bin\Debug\net6.0\TatvaBook.Entities.pdb
+C:\TatvaBook\TatvaBook.Interface\obj\Debug\net6.0\TatvaBook.Entities.csproj.AssemblyReference.cache
 C:\TatvaBook\TatvaBook.Interface\obj\Debug\net6.0\TatvaBook.Entities.GeneratedMSBuildEditorConfig.editorconfig
 C:\TatvaBook\TatvaBook.Interface\obj\Debug\net6.0\TatvaBook.Entities.AssemblyInfoInputs.cache
 C:\TatvaBook\TatvaBook.Interface\obj\Debug\net6.0\TatvaBook.Entities.AssemblyInfo.cs
