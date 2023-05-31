@@ -20,6 +20,7 @@ namespace TatvaBook.Entities.Data
         }
 
         public virtual DbSet<TatvaBookUser> TatvaBookUsers { get; set; } = null!;
+        public virtual DbSet<Story> Stories { get; set; } = null!;  
 
       
     }

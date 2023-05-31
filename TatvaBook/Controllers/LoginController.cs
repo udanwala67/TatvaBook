@@ -93,8 +93,8 @@ namespace TatvaBook.Controllers
                     };
                     smtpClient.Send(message);
 
-                    TempData["Success"] = "Registration link has been sent successfully to your Registred Email.";
-                   /* return RedirectToAction("RegistrationConfirmation", "Login");*/
+                   /* TempData["Success"] = "Registration link has been sent successfully to your Registred Email.";*/
+                    return RedirectToAction("RegistrationConfirmation", "Login");
                 }
 
                 foreach (var error in result.Errors)
@@ -108,10 +108,10 @@ namespace TatvaBook.Controllers
         }
 
 
-       /* public async Task<IActionResult> RegistrationConfirmation()
+        public async Task<IActionResult> RegistrationConfirmation()
         {
             return View();
-        }*/
+        }
 
 
         public async Task<IActionResult> UserRegistred(string email, string token)
@@ -356,6 +356,7 @@ namespace TatvaBook.Controllers
             if (result.Succeeded)
             {
                 return RedirectToAction("PlatformLanding", "Home");
+                /* return PartialView("_Posts");*/
             }
             else
             {
