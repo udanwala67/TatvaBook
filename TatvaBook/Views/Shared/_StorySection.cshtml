@@ -1,0 +1,15 @@
+﻿@model List<TatvaBook.Entities.ViewModels.StorySectionViewModel>
+
+<div class="story story1" 
+    <img src="~/Images/upload.png">
+    <p> <a asp-action="CreateStory" asp-controller="Home" class="Post_Story"> Post Story</a> </p>
+</div>
+
+
+@foreach (var story in Model)
+{ 
+        <div class="story" style="background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(../UploadedFiles/@story.StoryImage);">
+            <img src="~/Images/@story.UserAvatar">
+            <p>@story.UserName</p>
+        </div>
+}

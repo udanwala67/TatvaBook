@@ -5,6 +5,7 @@ using Microsoft.Extensions.Options;
 using TatvaBook.Entities.Data;
 using TatvaBook.Repository;
 using TatvaBook.Repository.Interface;
+using TatvaBook.Repository.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -44,6 +45,8 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("TwoFactorEnabled", x => x.RequireClaim("amr", "mfa")));
 
 builder.Services.AddScoped<ILoginRepository, LoginRepository>();
+builder.Services.AddScoped<IHomeRepository, HomeRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();  
 builder.Services.AddSession();
 
 
@@ -69,6 +72,6 @@ app.UseRouting();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Login}/{action=Login}/{id?}");
+    pattern: "{controller=Login}/{action=Registration}/{id?}");
 
 app.Run();

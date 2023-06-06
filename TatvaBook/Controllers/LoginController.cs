@@ -154,7 +154,7 @@ namespace TatvaBook.Controllers
                     var result = await _signInManager.PasswordSignInAsync(ExistingUser, user.Password, user.RememberMe, false);
 
                     if (result.Succeeded)
-                        return RedirectToAction("Index", "Home"); 
+                        return RedirectToAction("CreateStory", "Home"); 
 
                     if (result.RequiresTwoFactor)
                     {
@@ -337,10 +337,7 @@ namespace TatvaBook.Controllers
 
             return View();
 
-
         }
-
-
 
 
         [HttpPost]

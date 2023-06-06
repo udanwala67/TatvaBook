@@ -15,6 +15,8 @@ namespace TatvaBook.Entities.Models
       
         public string? LastName { get; set; }
 
+        public string? Full_Name { get; set; }
+
 
     }
 }

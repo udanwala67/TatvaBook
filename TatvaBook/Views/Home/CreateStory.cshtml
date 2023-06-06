@@ -18,11 +18,10 @@
             <input type="text" id="Content" name="Content" required>
         </div>*@
         <div class="form-group mt-3">
-            <label class="my-3" for="">Upload Your Photos</label>
+            <label class="my-3" asp-for="UploadedFiles">Upload Your Photos</label>
             <input type="file" asp-for="UploadedFiles" id="upload-img" /> @*accept = 'Image/*'*@
 
             <div class="img-thumbs img-thumbs-hidden" id="img-preview"></div>
-
 
         </div>
        @* <div>
