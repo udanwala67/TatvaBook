@@ -27,19 +27,33 @@ namespace TatvaBook.Entities.Data
         public virtual DbSet<Story> Stories { get; set; } = null!;
         public virtual DbSet<FriendRequest> FriendRequests { get; set; } = null!;
 
-/*        public List<TatvaBookUser> SearchUsers(string UserName)
+        public virtual DbSet<Friends> Friends { get; set; } = null!;    
+
+        protected override void OnModelCreating(ModelBuilder builder)
         {
-            SqlParameter pContactName = new SqlParameter("@Full_Name", UserName);
-            var users = _tatvaBookContext.TatvaBookUsers.FromSqlRaw("EXECUTE Friends_SearchFriends @Full_Name", pContactName).AsEnumerable();
-            if (users != null)
+            base.OnModelCreating(builder);
+            /* builder.Entity<TatvaBookUser>(x =>
             {
-                users.Select(x => new TatvaBookUser
-                {
-                    Full_Name = x.Full_Name,
-                }).ToList();
-            }
-            return users.ToList();
-        }*/
+                x
+                    .HasMany(x => x.Friends)
+                    .WithOne(x => x.FriendOf)
+                    .HasForeignKey(x => x.FriendOfUserId);
+            });*/
+        }
+
+        /* public List<TatvaBookUser> SearchUsers(string UserName)
+         {
+             SqlParameter pContactName = new SqlParameter("@Full_Name", UserName);
+             var users = _tatvaBookContext.TatvaBookUsers.FromSqlRaw("EXECUTE Friends_SearchFriends @Full_Name", pContactName).AsEnumerable();
+             if (users != null)
+             {
+                 users = users.Select(x => new TatvaBookUser
+                 {
+                     Full_Name = x.Full_Name,
+                 }).ToList();
+             }
+             return users.ToList();
+         }*/
 
     }
 }

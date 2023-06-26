@@ -1,0 +1,20 @@
+﻿@model TatvaBook.Entities.ViewModels.friendRequestViewModel
+
+<h4 class = "mb-4">TatvaBook Users : </h4>
+
+@foreach (var items in Model.tatvaBookUsers)
+{
+
+    <div id="fb">
+        <div id="fb-top">
+        </div>
+        <img src="~/Images/profile-pic.png" height="100" width="100">
+        <p id="info"><b>@items.Full_Name</b> <br> <span>14 mutual friends</span></p>
+        <div id="button-block">
+            <form method="post" asp-controller="Home" asp-action="SendFriendRequest">
+                <input type="hidden" name="receiverId" value="@items.Id" />
+                <button type="submit" class="add-to-friends-btn" id="addToFriends">Add to Friends</button>
+            </form>
+        </div>
+    </div>
+}

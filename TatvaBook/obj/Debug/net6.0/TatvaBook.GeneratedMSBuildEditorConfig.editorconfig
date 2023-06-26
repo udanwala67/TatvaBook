@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\TatvaBook\TatvaBook
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/TatvaBook/TatvaBook/Views/Home/AddToFriends.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGRUb0ZyaWVuZHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/TatvaBook/TatvaBook/Views/Home/CreateStory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGVTdG9yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -33,6 +37,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/TatvaBook/TatvaBook/Views/Home/ResetPasswordLinkSent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZXNldFBhc3N3b3JkTGlua1NlbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/TatvaBook/TatvaBook/Views/Home/_AcceptFriendReq.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfQWNjZXB0RnJpZW5kUmVxLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/TatvaBook/TatvaBook/Views/Home/_UsersListPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfVXNlcnNMaXN0UGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/TatvaBook/TatvaBook/Views/Login/ForgotPassword.cshtml]
@@ -67,8 +79,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TatvaBook/TatvaBook/Views/Shared/_AddToFriend.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZGRUb0ZyaWVuZC5jc2h0bWw=
+[C:/TatvaBook/TatvaBook/Views/Shared/_header.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9oZWFkZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/TatvaBook/TatvaBook/Views/Shared/_Navbar.cshtml]

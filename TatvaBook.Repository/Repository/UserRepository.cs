@@ -18,14 +18,7 @@ namespace TatvaBook.Repository.Repository
             _tatvaBookContext = tatvaBookContext;
         }
 
-/*        public List<TatvaBookUser> SearchUsers(string searchItem)
-        {
-            var users = _tatvaBookContext.TatvaBookUsers
-                .Where(u => u.UserName.Contains(searchItem) || u.Email.Contains(searchItem))
-                .ToList();
-
-            return users;
-        }*/
+   
 
     }
 }

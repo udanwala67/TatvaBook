@@ -21,7 +21,6 @@
 
 
 <body>
-
     <header>
         <div class="container-fluid">
             <nav class="navbar navbar-expand-lg ">
@@ -31,16 +30,12 @@
                 </button>
 
                 <div class="container-fluid">
-                   @*<partial name = "AddToFriend" />*@
-                
-                @* <input type="search" class="form-control searchbox" placeholder="Search mission....." aria-label="Search"
-                    id="search_bar" name="searchQuery" value="@ViewBag.InputSearch" onkeyup="mysearchFun()">
-                    </div>*@
-               <form class="d-flex m-auto mx-4" id="navbarTogglerDemo03" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-warning" type="submit">Search</button>
-                </form>
-                
+
+                    <form class="d-flex m-auto mx-4" id="navbarTogglerDemo03" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-warning" type="submit">Search</button>
+                    </form>
+
                 </div>
 
 
@@ -52,17 +47,17 @@
                                 <a class="nav-link" href="#"> <i class="bi bi-house-check mx-2" style="color:white;"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <i class="bi bi-people-fill mx-2" style="color:white;"></i>
-                                
-                                </a>
 
+                                <a class="nav-link" asp-action="AddToFriends" asp-conroller="Home">
+                                    <i class="bi bi-people-fill mx-2" style="color:white;"></i>
+                                </a>
 
 
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">
-                                    <i class="bi bi-chat-text-fill mx-2" style="color:white;"></i></a>
+                                    <i class="bi bi-chat-text-fill mx-2" style="color:white;"></i>
+                                </a>
                             </li>
                             <li class="nav-item">
                                 <form method="post" asp-action="Logout" asp-controller="Login">
@@ -83,7 +78,7 @@
     <div class="container-fluid d-flex">
 
         <div class="row">
-            <div class="pt-5 col-sm-2 d-sm-block sidebar">
+            <div class="pt-5 col-sm-2 sidebar">
                 <div class="pt-3 ps-4 sidebarcontent d-none d-md-inline">
                     NAVIGATION
                 </div>
@@ -106,14 +101,14 @@
                         </dt>
                         <dt class="mt-4">
                             <a asp-action="Theme" asp-controller="Admin" asp-route-SearchInputdata="" asp-route-pageindex=1 asp-route-pageSize=2 class="nav-link p-0 sidebarcontent d-flex atMediumConvertIntoColum theme">
-                                <i class="bi bi-grid-1x2-fill sidebar-img me-2"></i> <span class="d-none d-md-inline sidebar-text-font">Messenger</span>
+                                <i class="bi bi-grid-1x2-fill sidebar-img me-2"></i> <span class="d-none d-md-inline sidebar-text-font">Messenffger</span>
                             </a>
 
                         </dt>
                         <dt class="mt-4 ">
                             <a asp-action="Skill" asp-controller="Admin" asp-route-SearchInputdata="" asp-route-pageindex=1 asp-route-pageSize=2 class="nav-link sidebarcontent d-flex p-0 atMediumConvertIntoColum skill">
                                 <i class="bi bi-tools sidebar-img me-2"></i><span class="d-none d-md-inline sidebar-text-font">
-                                    Friend List
+                                  fsdf
                                 </span>
                             </a>
                         </dt>
@@ -294,7 +289,7 @@
                                 <a href="#" class=" sidebarcontent d-flex atMediumConvertIntoColum">
                                     <i class="bi bi-folder2 me-2 sidebar-img"></i><span class="pt-1 sidebar-text-font">
                                         Mission
-                                        Application
+                                        data
                                     </span>
                                 </a>
                             </dt>
@@ -328,23 +323,25 @@
 
 <script>
 
-//function mysearchFun() {
-//    var searchQuery = $('#searchBar').val();
-//    //console.log(searchQuery)
-//    $.ajax({
-//        url: '/Home/PlatformLanding',
-//        data: {
-//            "searchquery": searchQuery
-//        },
-//        success: function (data) {
-//            //console.log(data);
-//            var a = $($.parseHTML(data)).find('#abc').html();
-//            $('.abc').html(a);
-//        },
-//        error: function (error) {
-//            console.log(error);
-//        }
 
-//    })
-//}
+
+    //function mysearchFun() {
+    //    var searchQuery = $('#searchBar').val();
+    //    //console.log(searchQuery)
+    //    $.ajax({
+    //        url: '/Home/PlatformLanding',
+    //        data: {
+    //            "searchquery": searchQuery
+    //        },
+    //        success: function (data) {
+    //            //console.log(data);
+    //            var a = $($.parseHTML(data)).find('#abc').html();
+    //            $('.abc').html(a);
+    //        },
+    //        error: function (error) {
+    //            console.log(error);
+    //        }
+
+    //    })
+    //}
 </script>

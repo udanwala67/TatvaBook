@@ -51,6 +51,7 @@ namespace TatvaBook.Controllers
                     FirstName = user.FirstName,
                     LastName = user.LastName,
                     UserName = user.Email,
+                    Full_Name = user.FirstName + " " + user.LastName,   
                     Email = user.Email,
                     PasswordHash = user.Password,
                     TwoFactorEnabled = true
@@ -107,7 +108,6 @@ namespace TatvaBook.Controllers
             }
         }
 
-
         public async Task<IActionResult> RegistrationConfirmation()
         {
             return View();
@@ -161,7 +161,6 @@ namespace TatvaBook.Controllers
                         return RedirectToAction("LoginTwoStep", new { ExistingUser.Email, user });
                     }
                     ModelState.AddModelError(nameof(user.Email), "Login Failed: Invalid Email or password");
-
                 }
 
                 else

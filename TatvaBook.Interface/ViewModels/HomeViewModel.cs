@@ -15,16 +15,12 @@ namespace TatvaBook.Entities.ViewModels
     {
         public List<StorySectionViewModel> Stories { get; set; } = new List<StorySectionViewModel>();
 
-        public List<TatvaBookUser> tatvaBookUsers { get; set; } 
+      
         public long RequestID { get; set; }
      
-
         public string? SenderID { get; set; }
 
-
-
         public string? ReceiverID { get; set; }
-
 
         public string? Status { get; set; }  // pending,requestaccepted ,requestdeclined
     }

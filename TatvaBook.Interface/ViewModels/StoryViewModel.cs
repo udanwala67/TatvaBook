@@ -11,14 +11,13 @@ namespace TatvaBook.Entities.ViewModels
     public class StoryViewModel
     {
 
-
         public long StoryId { get; set; }
         public long UserId { get; set; }
         public DateTime? PublishedAt { get; set; }
         public DateTime? DeletedAt { get; set; }
 
         [Required]
-        public IFormFile UploadedFiles{ get; set; }
+        public IFormFile? UploadedFiles{ get; set; }
 
         public long? StoryViews { get; set; }
         public Boolean IsDeleted { get; set; }

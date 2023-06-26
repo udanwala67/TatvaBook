@@ -10,13 +10,12 @@ namespace TatvaBook.Entities.Models
 {
     public class TatvaBookUser : IdentityUser
     {
-      
+
         public string? FirstName { get; set; }
-      
+
         public string? LastName { get; set; }
 
         public string? Full_Name { get; set; }
-
 
     }
 }

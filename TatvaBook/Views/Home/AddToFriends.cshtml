@@ -1,0 +1,110 @@
+﻿@using TatvaBook.Entities.ViewModels
+@model List<friendRequestViewModel>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+@*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<link href="~/css/Sidebar.css" type="text/css" rel="stylesheet">
+
+
+<input class="form-control me-2 searchbox mb-3" type="search" placeholder="Search" aria-label="Search" id="search_bar" name="searchQuery">
+
+<partial Name="_AcceptFriendReq" model="@Model" />
+
+
+<div class="container-fluid searchResultsContainer">
+</div>
+
+
+
+@*-------------------------------------------Search Query----------------------------------------------------*@
+@section Scripts{
+
+<script>
+    searchAjax();
+        var input = document.getElementById("search_bar");
+        input.addEventListener("input", () =>{
+        var searchTerm = input.value.toLowerCase();
+        searchAjax(searchTerm);
+    })
+    function searchAjax(searchTerm = ""){
+         $.ajax({
+            url: '@Url.Action("FilterAddToFriends", "Home")',
+            type: 'GET',
+            data: {searchQuery: searchTerm},
+            success: function (result) {
+                $('.searchResultsContainer').html(result);
+            },
+            error: function (error) {
+                console.log(error);
+            }
+         });
+        }
+
+</script>
+
+@*----------------------------------------------request sent ------------------------------------------*@
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $(".add-to-friends-btn").click(function(e) {
+            e.preventDefault(); // Prevent the form from submitting
+
+            var button = $(this);
+            button.prop("disabled", true); // Disable the button to prevent multiple clicks
+
+            var form = button.closest("form");
+            $.ajax({
+                url: form.attr("action"),
+                type: form.attr("method"),
+                data: form.serialize(),
+                success: function(result) {
+                    // Handle the success response
+                    button.text("Sent Request");
+                    button.prop("disabled", true);
+                },
+                error: function(error) {
+                    // Handle the error response
+                    console.log(error);
+                    button.prop("disabled", false); // Re-enable the button
+                }
+            });
+        });
+    });
+</script>
+
+@*---------------------------------------------accept and decline request------------------------------------------*@
+<script>
+    //function acceptFriendRequest(requestId) {
+    //    $.ajax({
+    //        url: '@Url.Action("RecieveFriendRequest", "Home")',
+    //        type: 'POST',
+    //        data: {
+    //            requestId: requestId,
+    //            status: "Accepted",
+    //            CreatedAt: new Date().toISOString(),
+    //            IsDeleted: false
+    //        },
+    //        success: function (result) {
+    //            // Handle the success response, such as removing the accepted friend request from the view
+    //            // or displaying a success message.
+    //            console.log("Friend request accepted");
+    //        },
+    //        error: function (error) {
+
+    //            console.log(error);
+    //        }
+    //    });
+    //}
+
+    //function declineFriendRequest(requestId) {
+    //    // Implement similar AJAX request for declining the friend request
+    //    // You can handle the decline logic based on your requirements
+    //    console.log("Friend request declined");
+    //}
+</script>
+
+
+}

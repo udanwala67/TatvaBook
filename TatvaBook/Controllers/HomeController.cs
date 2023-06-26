@@ -11,6 +11,8 @@ using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 using TatvaBook.Repository.Repository;
 using TatvaBook.Entities.Models;
+using Microsoft.EntityFrameworkCore;
+using TatvaBook.Repository;
 
 namespace TatvaBook.Controllers
 {
@@ -48,8 +50,6 @@ namespace TatvaBook.Controllers
         }
 
 
-
-
         public IActionResult PlatformLanding()
 
         {
@@ -61,14 +61,6 @@ namespace TatvaBook.Controllers
 
         }
 
-    /*    [HttpPost]
-
-        public async Task<IActionResult> PlatformLanding(string UserName)
-        {
-            HomeViewModel homeViewModel = new HomeViewModel();
-            homeViewModel.tatvaBookUsers = this._tatvaBookContext.SearchUsers(UserName);
-            return View(homeViewModel);
-        }*/
 
 
         [HttpGet]
@@ -98,9 +90,138 @@ namespace TatvaBook.Controllers
             }
 
             return RedirectToAction("PlatformLanding");
+        }
+
+
+
+        public IActionResult FilterAddToFriends(string? searchQuery)
+        {
+
+            List<TatvaBookUser> user = _tatvaBookContext.TatvaBookUsers.ToList();
+
+            if (!string.IsNullOrEmpty(searchQuery))
+            {
+                user = user.Where(m => m.Full_Name.ToLower().Contains(searchQuery)).ToList();
+            }
+
+            return PartialView("_UsersListPartial", new friendRequestViewModel() { tatvaBookUsers = user });
+        }
+
+
+
+        [HttpPost]
+        public async Task<IActionResult> SendFriendRequest(string senderId, string receiverId)
+        {
+            bool existingFriendRequest = _tatvaBookContext.FriendRequests
+            .Any(fr => fr.SenderID == senderId && fr.ReceiverID == receiverId);
+
+            if (existingFriendRequest)
+            {
+
+                return BadRequest("Friend request already exists.");
+            }
+            else
+            {
+                senderId = _userManager.GetUserId(User);
+
+                // Check if the sender and receiver exist in the database
+
+                var sender = await _userManager.FindByIdAsync(senderId);
+                var receiver = await _userManager.FindByIdAsync(receiverId);
+
+                if (sender == null || receiver == null)
+                {
+                    return RedirectToAction("AddToFriends", "Home");
+                }
+
+
+                // Create a new friend request
+                var friendRequest = new FriendRequest
+                {
+                    SenderID = senderId,
+                    ReceiverID = Convert.ToString(receiverId),
+                    Status = "pending",// Set the initial status of the friend request
+                    CreatedAt = DateTime.Now,
+                    IsDeleted = false
+                };
+
+                // Add the friend request to the database
+                _tatvaBookContext.FriendRequests.Add(friendRequest);
+                await _tatvaBookContext.SaveChangesAsync();
+
+
+                return RedirectToAction("AddToFriends");
+            }
 
         }
 
+        public async Task<IActionResult> AddToFriends()
+        {
+            var userId = _userManager.GetUserId(User);
+
+            List<FriendRequest> requests = _tatvaBookContext.FriendRequests.Where(u => u.ReceiverID == userId && u.Status == "pending").ToList();
+
+            var friendRequests = new List<friendRequestViewModel>();
+
+            foreach (var request in requests)
+            {
+                var friendRequest = new friendRequestViewModel();
+                friendRequest.RequestID = request.RequestID;
+                friendRequest.SenderID = request.SenderID;
+                friendRequest.SenderName = _tatvaBookContext.TatvaBookUsers.Where(u => u.Id == request.SenderID).Select(u => u.Full_Name).First();
+                friendRequest.ReceiverID = request.ReceiverID;
+                friendRequests.Add(friendRequest);
+            }
+            return View(friendRequests);
+        }
+       
+        public async Task<IActionResult> UpdateFriendRequest(long requestId, bool acceptRequest)
+        {
+            try
+            {
+                FriendRequest existingFriendRequest = await _tatvaBookContext.FriendRequests.FindAsync(requestId);
+
+                if (existingFriendRequest == null)
+                {
+                    return View("Error");
+                }
+
+                if (acceptRequest == true)
+                {
+                    existingFriendRequest.Status = Services.Confirm;
+                }
+                else
+                {
+                    existingFriendRequest.Status = Services.Decline;
+                }
+
+                _tatvaBookContext.Update(existingFriendRequest);
+
+                await _tatvaBookContext.SaveChangesAsync();
+
+
+                if (existingFriendRequest.Status == Services.Confirm)
+                {
+
+                    Friends friends = new Friends();
+
+                    friends.CreatedAt = DateTime.Now;
+                    friends.FriendId = existingFriendRequest.SenderID;
+                    friends.IsDeleted = false;
+                    friends.UserId = existingFriendRequest.ReceiverID;
+
+                    _tatvaBookContext.Add(friends);
+                    _tatvaBookContext.SaveChanges();
+                }
+            }catch (Exception ex)
+            {
+                throw;
+            }
+           
+
+
+            return RedirectToAction("AddToFriends", "Home"); // Redirect to the appropriate page after updating the friend request
+        }
 
 
 
@@ -111,3 +232,4 @@ namespace TatvaBook.Controllers
         }
     }
 }
+

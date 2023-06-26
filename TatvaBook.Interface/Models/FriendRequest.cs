@@ -11,17 +11,18 @@ namespace TatvaBook.Entities.Models
     public class FriendRequest
     {
         [Key]
-       public long RequestID {  get; set; } 
+        public long RequestID { get; set; }
 
         [ForeignKey("Sender")]
-       public string SenderID { get; set; }    
-        public virtual TatvaBookUser? Sender { get; set; }   
+        public string? SenderID { get; set; }
+        public virtual TatvaBookUser? Sender { get; set; }
 
         [ForeignKey("Receiver")]
-        public string ReceiverID { get; set; } 
-        public virtual TatvaBookUser? Receiver { get; set; } 
-       
-        public string Status { get; set; }  // pending,requestaccepted ,requestdeclined
+        public string? ReceiverID { get; set; }
+        public virtual TatvaBookUser? Receiver { get; set; }
+        public bool IsDeleted { get; set; }
+        public DateTime? CreatedAt { get; set; }
+        public string? Status { get; set; }  // pending, requestaccepted ,requestdeclined
 
     }
 }

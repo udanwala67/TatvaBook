@@ -1,0 +1,65 @@
+﻿@using TatvaBook.Entities.ViewModels
+@model List<friendRequestViewModel>
+
+<h4 class="mb-4">Friend Requests : </h4>
+
+@foreach (var request in Model)
+{
+    @*   <div>
+        <p> sent you a friend request</p>
+        <span>@request.SenderName</span>
+        <button class = "bg-primary" onclick="acceptFriendRequest(@request.RequestID )">Accept</button>
+        <button onclick="declineFriendRequest(@request.RequestID)">Decline</button>
+        </div>*@
+    <div id="fb">
+        <div id="fb-top">
+            <p>sent you a friend request</p>
+        </div>
+        <img src="~/Images/profile-pic.png" height="100" width="100">
+        <p id="info"><b>@request.SenderName</b> <br> <span>14 mutual friends</span></p>
+        <div id="button-block">
+          
+                <button onclick="acceptFriendRequest(@request.RequestID )" id="addToFriends">Accept</button>
+                <button onclick="declineFriendRequest(@request.RequestID)" id="addToFriends">Delete</button>
+            
+        </div>
+    </div>
+}
+
+<script>
+    function acceptFriendRequest(requestId) {
+        
+        $.ajax({
+            url: '/Home/UpdateFriendRequest',
+            type: 'POST',
+            data: { requestId: requestId, acceptRequest: true },
+            success: function (result) {
+
+                console.log("Friend request accepted");
+                location.reload();
+            },
+            error: function (error) {
+
+                console.log(error);
+            }
+        });
+    }
+
+    function deleteFriendRequest(requestId) {
+        $.ajax({
+            url: '/Home/UpdateFriendRequest',
+            type: 'POST',
+            data: { requestId: requestId, acceptRequest: false },
+            success: function (result) {
+
+                console.log("Friend request deleted");
+
+                location.reload();
+            },
+            error: function (error) {
+
+                console.log(error);
+            }
+        });
+    }
+</script>

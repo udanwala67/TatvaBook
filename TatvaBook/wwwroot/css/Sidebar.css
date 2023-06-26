@@ -83,7 +83,7 @@ nav {
 .sidebar {
     background-color: #0d7aff;
     height: 150vh;
-    position:relative;
+    position: relative;
 }
 
 .sidebar-img {
@@ -135,6 +135,7 @@ nav {
 .overflow {
     overflow-y: auto;
     height: 90vh;
+
 }
 
 #loadPartialView::-webkit-scrollbar {
@@ -148,7 +149,6 @@ nav {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-   
 }
 
 :root {
@@ -271,10 +271,8 @@ nav {
 }
 
 .main-content {
-    width: 60%;
-    position : relative;
-    left:20%;
-    
+    max-width: 60%;
+    margin-left: 15%;
 }
 
 .imp-links a, .shortcut-links a {
@@ -693,11 +691,118 @@ nav {
 
 
 .Post_Story {
-   /* font-family: 'popins','sans-serif';*/
+    /* font-family: 'popins','sans-serif';*/
     color: #fff;
 }
 
 .Title {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    
+}
+
+
+/*-----------------------------------------css for friend request page------------------------------------------------*/
+
+
+
+
+.container{
+    display : flex;
+    justify-content:center;
+}
+
+#fb {
+    width: 500px;
+    margin-bottom : 30px;   
+    border: 1px solid gray;
+    border-radius: 5px;
+    position: relative;
+    height: 175px;
+}
+
+
+
+#fb p {
+    font-family: sans-serif;
+    margin: 0 0 0 10px;
+    line-height: 30px;
+}
+
+#fb-top span {
+    color: #4267B2;
+    float: right;
+    margin-right: 10px;
+}
+
+#fb-top {
+    background-color: #efefef;
+    height: 30px;
+    width: 500px;
+    border-radius: 5px 5px 0 0;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    border: 1px solid gray;
+}
+
+#fb img {
+    position: absolute;
+    left: 10px;
+    top: 52.5px;
+}
+
+#info {
+    position: absolute;
+    left: 120px;
+    top: 75px;
+}
+
+#info {
+    color: #4267B2;
+    line-height: 25px;
+    font-size: 18px;
+}
+
+    #info span {
+        color: #777;
+        font-size: 14px;
+    }
+
+#button-block {
+    position: absolute;
+    right: 10px;
+    top: 85px;
+}
+
+    #button-block div {
+        display: inline-block;
+    }
+
+#addToFriends, #delete {
+    background-color: #4267B2;
+    color: white;
+    padding: 7px;
+    border-radius: 2px;
+    margin-right: 10px;
+    font-family: sans-serif;
+}
+
+#delete {
+    color: #222;
+    background-color: #bbb;
+    border: 1px solid #999;
+    padding: 6px;
+    margin-right: 0;
+}
+
+#button-block div:hover {
+    opacity: .8;
+    cursor: pointer;
+}
+
+
+/*---------------------------------------------------for add to friends page----------------------------------------------------------------*/
+
+.searchbox{
+    display:flex;
+
 }
